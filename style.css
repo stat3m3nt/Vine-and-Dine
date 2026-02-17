@@ -1,0 +1,17 @@
+.logo-text{
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    color:rgb(141, 32, 32);
+}
+
+.logo-symbol{
+    color: rgb(101, 101, 93);
+    font-size: 2rem;
+}
+
+.login-btn{
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    color: #000;
+
+}
