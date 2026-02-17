@@ -9,7 +9,7 @@
     font-size: 2rem;
 }
 
-.login-btn,.login-btn:hover{
+/* .login-btn,.login-btn:hover{
     border: 3px solid black !important;
     border-radius: 1rem !important;
 }
@@ -19,4 +19,9 @@
     color: white !important;
     
 }
+ */
 
+#map{
+    height: 80vh;
+    width: 100%;
+}

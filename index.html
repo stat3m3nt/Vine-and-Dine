@@ -7,6 +7,9 @@
     <!-- style sheet -->
      <link href="style.css" rel="stylesheet">
 
+    <!-- JS script -->
+     <script src="script.js" defer></script>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -47,15 +50,25 @@
 
                         <!-- Log In Button -->
                         <li class="nav-item">
-                            <a class="btn login-btn" href="#">Log In</a>
+                            <a class="btn btn-outline-dark rounded-pill px-3 login-btn" href="#">Log In</a>
                         </li>
-                        
+              
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <main>
+        <div id="map"></div>
+    </main>
 
+    <!-- Google Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBazMWRtcmtkfKR0iZMU1fvc1ajvnoXhc4
+&libraries=maps"
+async
+defer
+    ></script>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
