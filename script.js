@@ -139,7 +139,7 @@ const wineries = [
         website: "http://theharewineco.com",
         lat: 43.195148,
         lng: -79.156185,
-        category:-"Boutique Winery",
+        category: "Boutique Winery",
         tastingStyle: "Red & White",
         telephone: "(905)-684-4994"
     },
@@ -157,22 +157,26 @@ async function initMap(){
     const { Map } = (await google.maps.importLibrary('maps'));
     map = new Map(document.getElementById("map"), {
         center:{ lat: 43.255, lng: -79.0275 },
-        zoom: 13
+        zoom: 13,
+        mapId: "1191f790cd1a7db39ca9c15e"
         
+    });
+
+    const { AdvancedMarkerElement } = (await google.maps.importLibrary("marker"));
+
+    // Loop through wineries to place markers
+    wineries.forEach((winery) => {
+        const marker = new AdvancedMarkerElement({
+            map: map,
+            position:{
+                lat: parseFloat(winery.lat),
+                lng: parseFloat(winery.lng)
+            },
+            title: winery.name
+        });
+
+        marker.category = winery.category;
+        markers.push(marker)
     });
 }
 
-// Loop through wineries to place markers
-wineries.forEach((winery) => {
-    const marker = new AdvancedMarkerElements({
-        map: map,
-        position:{
-            lat: parseFloat(winery.lat),
-            lng: parseFloat(winery.lng)
-        },
-        title: winery.name
-    });
-
-    marker.category = winery.category;
-    markers.push(marker)
-})
