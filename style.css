@@ -25,3 +25,13 @@
     height: 80vh;
     width: 100%;
 }
+
+.custom-btn{
+    background-color: rgb(141, 32, 32) !important;
+    color: white !important;
+}
+
+.custom-btn:hover{
+    background-color: black !important;
+
+}

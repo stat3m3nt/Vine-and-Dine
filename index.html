@@ -46,7 +46,7 @@
 
                         <!-- Add winery -->
                         <li class="nav-item me-3">
-                            <a class="nav-link" href="#">Add Winery</a>
+                            <a class="nav-link" href="#winery-form-container">Add Winery</a>
                         </li>
 
                         <!-- Log In Button -->
@@ -61,6 +61,24 @@
     </header>
     <main>
         <div id="map"></div>
+
+        <!-- Add winery form -->
+         <div class="container mt-4">
+            <div id="winery-form-container" class="card p-4">
+                <h5 class="card-title text-center"> Add Winery </h5>
+                <form id="winery-form">
+                    <div class="mb-3">
+                        <label for="winery-name">Winery Name</label>
+                        <input type="text" class="form-control" id="winery-name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="winery-address" text-center>Address</label>
+                        <input type="text" class="form-control" id="winery-address" required>
+                    </div>
+                    <button type="submit" class="btn custom-btn">Add</button>
+                </form>
+            </div>
+         </div>
     </main>
 
     

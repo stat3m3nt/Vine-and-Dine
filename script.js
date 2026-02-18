@@ -175,10 +175,6 @@ async function initMap(){
                 lng: parseFloat(winery.lng)
             },
             title: winery.name,
-            
-            //     url: "/images/wine-glass-icon",
-            //     scaledSize: new google.maps.Size(40,40)
-            // }
             element: (() => {
             const el = document.createElement("div");
             el.style.width = "30px";
@@ -186,7 +182,7 @@ async function initMap(){
             el.style.display = "flex";
             el.style.alignItems = "center";
             el.style.justifyContent = "center";
-            el.innerHTML = `<img src="/images/wine-glass-icon.svg" width="24" height="24" />`;
+            el.innerHTML =  `<img src="/images/wine-glass-icon.svg" width="30" height="30" />`;
             return el;
         })(),
         });
