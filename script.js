@@ -1,4 +1,5 @@
 let map;
+let markers = [];
 
 const wineries = [
     {
@@ -160,3 +161,18 @@ async function initMap(){
         
     });
 }
+
+// Loop through wineries to place markers
+wineries.forEach((winery) => {
+    const marker = new AdvancedMarkerElements({
+        map: map,
+        position:{
+            lat: parseFloat(winery.lat),
+            lng: parseFloat(winery.lng)
+        },
+        title: winery.name
+    });
+
+    marker.category = winery.category;
+    markers.push(marker)
+})
