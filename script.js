@@ -1,5 +1,6 @@
 let map;
 let markers = [];
+let currentWindow = null; // to track opened infowindow
 
 const wineries = [
     {
@@ -153,7 +154,7 @@ const wineries = [
         telephone: "(905) 765-2000"
     }
 ]
-async function initMap(){
+window.initMap = async function(){
     const { Map } = (await google.maps.importLibrary('maps'));
     map = new Map(document.getElementById("map"), {
         center:{ lat: 43.255, lng: -79.0275 },
@@ -193,7 +194,11 @@ async function initMap(){
 
         // window listener to open infoWindow
         marker.addListener("gmp-click", () => {
+            if (currentWindow){
+                currentWindow.close();
+            }
             infoWindow.open({anchor: marker, map,});
+            currentWindow = infoWindow;
         }
     );
     });
