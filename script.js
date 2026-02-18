@@ -173,7 +173,16 @@ window.initMap = async function(){
                 lat: parseFloat(winery.lat),
                 lng: parseFloat(winery.lng)
             },
-            title: winery.name
+            title: winery.name,
+            // icon:{
+            //     url: "/images/wine-glass-icon",
+            //     scaledSize: new google.maps.Size(40,40)
+            // }
+            element: (() => {
+            const el = document.createElement("div");
+            el.innerHTML = `<i class="fa-solid fa-wine-glass" style="color: #900; font-size: 24px;"></i>`;
+            return el;
+        })(),
         });
 
         marker.category = winery.category;
