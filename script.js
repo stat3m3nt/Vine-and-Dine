@@ -154,7 +154,7 @@ const wineries = [
         telephone: "(905) 765-2000"
     }
 ]
-window.initMap = async function(){
+async function initMap(){
     const { Map } = (await google.maps.importLibrary('maps'));
     map = new Map(document.getElementById("map"), {
         center:{ lat: 43.255, lng: -79.0275 },
@@ -164,6 +164,7 @@ window.initMap = async function(){
     });
 
     const { AdvancedMarkerElement } = (await google.maps.importLibrary("marker"));
+    
 
     // Loop through wineries to place markers
     wineries.forEach((winery) => {
@@ -174,13 +175,18 @@ window.initMap = async function(){
                 lng: parseFloat(winery.lng)
             },
             title: winery.name,
-            // icon:{
+            
             //     url: "/images/wine-glass-icon",
             //     scaledSize: new google.maps.Size(40,40)
             // }
             element: (() => {
             const el = document.createElement("div");
-            el.innerHTML = `<i class="fa-solid fa-wine-glass" style="color: #900; font-size: 24px;"></i>`;
+            el.style.width = "30px";
+            el.style.height = "30px";
+            el.style.display = "flex";
+            el.style.alignItems = "center";
+            el.style.justifyContent = "center";
+            el.innerHTML = `<img src="/images/wine-glass-icon.svg" width="24" height="24" />`;
             return el;
         })(),
         });
@@ -210,8 +216,10 @@ window.initMap = async function(){
             currentWindow = infoWindow;
         }
     );
+
     });
 
-    
 }
+
+window.initMap = initMap;
 
