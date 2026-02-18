@@ -177,6 +177,27 @@ async function initMap(){
 
         marker.category = winery.category;
         markers.push(marker)
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: `
+                <div style="max-width:250px;">
+                    <h3>${winery.name}</h3>
+                    <p><strong>Address:</strong> ${winery.address.replace(/\n/g, "<br>")}</p>
+                    <p><strong>Category:</strong> ${winery.category}</p>
+                    <p><strong>Tasting Style:</strong> ${winery.tastingStyle}</p>
+                    <p><strong>Tel:</strong> ${winery.telephone}</p>
+                    <p><a href="${winery.website}" target="_blank">Website</a></p>                    
+                </div>
+                `
+        });
+
+        // window listener to open infoWindow
+        marker.addListener("gmp-click", () => {
+            infoWindow.open({anchor: marker, map,});
+        }
+    );
     });
+
+    
 }
 
