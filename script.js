@@ -1,7 +1,9 @@
 let map;
+let geocoder;
 let markers = [];
 let currentWindow = null; // to track opened infowindow
 
+// winery objects
 const wineries = [
     {
         name: "AMO Estate Winery",
@@ -154,8 +156,12 @@ const wineries = [
         telephone: "(905) 765-2000"
     }
 ]
+
+
 async function initMap(){
     const { Map } = (await google.maps.importLibrary('maps'));
+    const { AdvancedMarkerElement } = (await google.maps.importLibrary("marker"));
+
     map = new Map(document.getElementById("map"), {
         center:{ lat: 43.255, lng: -79.0275 },
         zoom: 13,
@@ -163,8 +169,8 @@ async function initMap(){
         
     });
 
-    const { AdvancedMarkerElement } = (await google.maps.importLibrary("marker"));
     
+    geocoder = new google.maps.Geocoder(); // initialize geocode API
 
     // Loop through wineries to place markers
     wineries.forEach((winery) => {
@@ -210,12 +216,79 @@ async function initMap(){
             }
             infoWindow.open({anchor: marker, map,});
             currentWindow = infoWindow;
-        }
-    );
+        });
 
     });
-
+    mapWinery();
 }
 
+/**
+ * Event handler to handle form submission, initiate geocoder API
+ * and store new winery data into wineries array
+ */
+
+function mapWinery(){
+    const wineryForm = document.getElementById("winery-form");
+    const { AdvancedMarkerElement } = google.maps.marker;
+
+    wineryForm.addEventListener("submit", function(e) {
+        e.preventDefault(); //stops page from reloading
+
+        const name = document.getElementById("winery-name").value;
+        const address = document.getElementById("winery-address").value;
+
+        geocoder.geocode({address: address}, async function (results, status) {
+            if(status === "OK"){
+                const location = results[0].geometry.location;
+                const lat = location.lat();
+                const lng = location.lng();
+
+                // add new winery to array
+                const newWinery = {
+                    name,
+                    address,
+                    lat,
+                    lng,
+                };
+
+            //     const infoWindow = new google.maps.InfoWindow({
+            //     content: `
+            //         <div style="max-width:250px;">
+            //             <h3>${newWinery.name}</h3>
+            //             <p><strong>${newWinery.address}</strong> ${winery.address.replace(/\n/g, "<br>")}</p>
+            //             <p><strong>${newWinery.category}Category:</strong> ${winery.category}</p>
+            //             <p><strong>${newWinery.tastingStyle}Tasting Style:</strong> ${winery.tastingStyle}</p>
+            //             <p><strong>Tel:</strong> ${newWinery.telephone}</p>
+            //             <p><a href="${newWinery.website}" target="_blank">Website</a></p>                    
+            //         </div>
+            //         `
+            // });
+
+                wineries.push(newWinery);
+
+                const marker = new AdvancedMarkerElement({
+                    map: map,
+                    position: { lat: lat, lng: lng },
+                    title: name
+                });
+
+                markers.push(marker);
+
+                map.setCenter({ lat: lat, lng: lng });
+
+            } else {
+                alert("Address not found. Try again.");
+            }
+            });
+            // wineryForm.requestFullscreen();
+        
+    });
+
+};
 window.initMap = initMap;
+
+window.addEventListener("load", () =>{
+    initMap();
+    // mapWinery();
+    });
 
