@@ -1,37 +1,63 @@
+:root{
+    --main-color:rgb(141, 32, 32);
+    --secondary-color: rgb(101, 101, 93);
+}
+.navbar {
+    border-bottom: 2px solid var(--main-color);
+    transition: transform o.3s ease-in-out;
+    background-color: antiquewhite;
+}
+
+.navbar-hidden{
+    transform: translateY(-100%);
+}
+body{
+    padding-top: 110px;
+}
 .logo-text{
     font-family: 'Great Vibes', cursive;
     font-size: 1.5rem;
-    color:rgb(141, 32, 32);
+    color:var(--main-color);
 }
 
 .logo-symbol{
-    color: rgb(101, 101, 93);
+    color: var(--secondary-color);
     font-size: 2rem;
 }
 
-/* .login-btn,.login-btn:hover{
-    border: 3px solid black !important;
-    border-radius: 1rem !important;
-}
-
-.login-btn:hover{
-    background-color:rgb(141, 32, 32) !important;
-    color: white !important;
-    
-}
- */
 
 #map{
     height: 80vh;
     width: 100%;
 }
 
-.custom-btn{
-    background-color: rgb(141, 32, 32) !important;
+.custom-btn, .footer, .socials{
+    background-color: var(--main-color) !important;
     color: white !important;
 }
 
 .custom-btn:hover{
     background-color: black !important;
 
+}
+
+.login-btn{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    /* */
+
+}
+
+.login{
+    background-color: var(--main-color) !important;
+    color: white !important; 
+}
+
+.filter-btn{
+    border: 1px solid var(--main-color) !important;
+    color: var(--main-color) !important;
+}
+.filter-btn:hover, .filter-btn.active{
+    background-color: var(--main-color) !important;
+    color: white !important;
 }

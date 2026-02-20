@@ -1,3 +1,4 @@
+let lastScrollTop = 0;
 let map;
 let geocoder;
 let markers = [];
@@ -137,7 +138,7 @@ const wineries = [
         website: "http://www.lakeviewwineco.com",
         lat: 43.205637,
         lng: -79.142729,
-        category: "Lakefront Winery",
+        category: "Farm Winery",
         tastingStyle: "Mixed",
         telephone: "(905) 685-5673"
     },
@@ -161,6 +162,23 @@ const wineries = [
         telephone: "(905)-765-2000"
     }
 ];
+
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling DOWN
+        navbar.classList.add("navbar-hidden");
+    } else {
+        // Scrolling UP
+        navbar.classList.remove("navbar-hidden");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
 
 function initMap(){
     map = new google.maps.Map(document.getElementById("map"), {
@@ -237,21 +255,21 @@ function initMap(){
     //create marker function
     function createMarker(winery, contentHtml) {
         if(winery.category === "Boutique Winery"){
-            new_icon = "https://maps.google.com/mapfiles/kml/pushpin/ltblu-pushpin.png";
+            new_icon = "https://maps.google.com/mapfiles/kml/paddle/red-circle.png";
         } else if(winery.category == "Corporate Winery"){
-            new_icon = "https://maps.google.com/mapfiles/kml/pushpin/pink-pushpin.png";
+            new_icon = "https://maps.google.com/mapfiles/kml/paddle/red-diamond.png";
         } else if(winery.category == "Estate Winery"){
-            new_icon ="https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png";
+            new_icon ="https://maps.google.com/mapfiles/kml/paddle/red-square.png";
         } else if(winery.category == "Casual Winery"){
-            new_icon = "https://maps.google.com/mapfiles/kml/shapes/bars.png";
+            new_icon = "https://maps.google.com/mapfiles/kml/paddle/red-stars.png";
         } else if(winery.category == "Luxury Winery"){
-            new_icon ="https://maps.google.com/mapfiles/kml/pushpin/wht-pushpin.png";
+            new_icon ="https://maps.google.com/mapfiles/kml/paddle/ltblu-stars.png";
         } else if(winery.category == "Lakefront Winery"){
-            new_icon = "https://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png";
-        } else if(winery.category == "Celebrity_Owned"){
-            new_icon ="https://maps.google.com/mapfiles/kml/pushpin/purple-pushpin.png";
+            new_icon = "https://maps.google.com/mapfiles/kml/paddle/blu-circle.png";
+        } else if(winery.category == "Celebrity Winery"){
+            new_icon ="https://maps.google.com/mapfiles/kml/paddle/ylw-stars.png";
         } else if(winery.category == "Farm Winery"){
-            new_icon = "https://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png";
+            new_icon = "https://maps.google.com/mapfiles/kml/paddle/grn-circle.png";
         } else{
             new_icon ="https://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png";
         }
