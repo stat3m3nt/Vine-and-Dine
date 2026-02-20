@@ -59,6 +59,20 @@
         </nav>
     </header>
     <main>
+        <!-- filter container -->
+         <div class="container my-3">
+            <div class="d-flex flex-wrap flex-column flex-sm-row gap-2" id="filter-buttons">
+                <button class="btn btn-outline-primary filter-btn" data-category="All">All Wineries</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Boutique Winery">Boutique Winery</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Corporate Winery">Corporate Winery</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Estate Winery">Estate Winery</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Celebrity Winery">Celebrity Winery</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Casual Winery">Casual Winery</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Lakefront Winery">Lakefront Winery</button>
+                <button class="btn btn-outline-primary filter-btn" data-category="Farm Winery">Farm Winery</button>
+            </div>
+        </div>
+        <!-- map -->
         <div id="map"></div>
 
         <!-- Add winery form -->
@@ -71,8 +85,34 @@
                         <input type="text" class="form-control" id="winery-name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="winery-address" text-center>Address</label>
+                        <label for="winery-address">Address</label>
                         <input type="text" class="form-control" id="winery-address" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="category-select"> Select Category </label>
+                        <select class="form-select" id="category-select">
+                            <option value="" selected disabled>Choose...</option>
+                            <option value="Boutique Winery">Boutique Winery</option>
+                            <option value="Corporate Winery">Corporate Winery</option>
+                            <option value="Casual Winery">Casual Winery</option>
+                            <option value="Celebrity Winery">Celebrity Winery</option>
+                            <option value="Lakefront Winery">Lakefront Winery</option>
+                            <option value="Estate Winery">Estate Winery</option>
+                            <option value="Farm Winery">Farm Winery</option>
+                            <option value="Luxury Winery">Luxury Winery</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tasting-style">Tasting Style</label>
+                        <input type="text" class="form-control" id="tasting-style">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone-number" placeholder="(123)-234-567">
+                    </div>
+                    <div class="mb-3">
+                        <label for="web-link">Website URL</label>
+                        <input type="url" class="form-control" id="web-link" placeholder="https://www.website.com">
                     </div>
                     <button id="submit-btn" type="submit" class="btn custom-btn">Add</button>
                 </form>
