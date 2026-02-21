@@ -81,7 +81,8 @@ Google Maps JavaScript API
 
 Google Maps Marker Library
 
-⚙️ Key Challenges & Fixes
+⚙️ Key Challenges & Fixes:
+
 1️⃣ Google Maps Loading Warning
 
 Issue:
@@ -100,7 +101,8 @@ Ensured directionsRenderer was properly instantiated before attempting to clear 
 
 if (directionsRenderer) {
   directionsRenderer.setDirections({ routes: [] });
-}
+}.
+
 3️⃣ Directions Not Clearing Properly (Only Zoom Changing)
 
 Issue:
@@ -131,7 +133,7 @@ Added logic to:
 
 Remove .active class from all buttons
 
-Add .active only to the clicked button
+Add .active only to the clicked button.
 
 6️⃣ Marker & InfoWindow Management
 
