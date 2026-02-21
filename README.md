@@ -124,7 +124,7 @@ Multiple info windows could remain open.
 Fix:
 Used a currentWindow variable to track and close the previously opened InfoWindow before opening a new one.
 
-##📂 Project Structure
+## 📂 Project Structure
 vine-and-dine/
 │
 ├── index.html
@@ -178,7 +178,7 @@ Convert the project from a front-end application to a full-stack web application
 
 
 
-##👨🏽‍💻 Author
+## 👨🏽‍💻 Author
 
 ### Andrew Evboifo
 #### Interactive Map Project – 2026
