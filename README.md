@@ -69,19 +69,18 @@ Selected filter button styling (only colored when active)
 
 Scroll effects for better user experience
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-HTML5
+### Frontend
+- HTML5
+- Bootstrap
+- CSS3
+- JavaScript (Vanilla)
+  
+### API's and services
+- Google Maps JavaScript API
 
-CSS3
-
-JavaScript (Vanilla)
-
-Google Maps JavaScript API
-
-Google Maps Marker Library
-
-⚙️ Key Challenges & Fixes:
+## ⚙️ Key Challenges & Fixes:
 
 1️⃣ Google Maps Loading Warning
 
@@ -154,7 +153,7 @@ vine-and-dine/
 │   └── logo/
 └── README.md
 
-🧠 What I Learned
+## 🧠 What I Learned
 
 1. Proper Google Maps API integration
 2. Managing third-party API warnings and performance recommendations
@@ -164,22 +163,22 @@ vine-and-dine/
 6. Improving UX with scroll and selection-based interactions
 
 
-Possible Future Improvements
+## Possible Future Improvements:
 
-🔐 User Authentication & Personal Accounts:
-    - Implement a full authentication system to allow users to:
-      * Create accounts and securely log in
-      * Maintain personalized profiles
-      * Persist user-specific data across sessions
-       (This would require integration of a backend service and a database system.)
+### 🔐 User Authentication & Personal Accounts:
+        - Implement a full authentication system to allow users to:
+          * Create accounts and securely log in
+          * Maintain personalized profiles
+          * Persist user-specific data across sessions
+           (This would require integration of a backend service and a database system.)
 
-⭐ Winery Visit Ratings
+### ⭐ Winery Visit Ratings
 
-  Enhance user experience by allowing users to:
-  
-  * Leave 1–5 star ratings
-  * Add personal notes or reviews
-  * User data would be stored in a database and dynamically rendered upon login.
+      Enhance user experience by allowing users to:
+      
+      * Leave 1–5 star ratings
+      * Add personal notes or reviews
+      * User data would be stored in a database and dynamically rendered upon login.
 
 
 💾 Persistent Data Storage
