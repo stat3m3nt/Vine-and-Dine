@@ -125,7 +125,7 @@ Fix:
 Used a currentWindow variable to track and close the previously opened InfoWindow before opening a new one.
 
 ## 📂 Project Structure
-<pre> ```bash
+<pre> 
 vine-and-dine/
 │
 ├── index.html
@@ -135,7 +135,7 @@ vine-and-dine/
 ├── images/
 │   └── logo/
 └── README.md
-``` </pre>
+</pre>
 ## 🧠 What I Learned
 
 1. Proper Google Maps API integration
