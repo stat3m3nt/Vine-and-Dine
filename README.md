@@ -165,8 +165,9 @@ vine-and-dine/
 
 
 Possible Future Improvements
-🔐 User Authentication & Personal Accounts
-    Implement a full authentication system to allow users to:
+
+🔐 User Authentication & Personal Accounts:
+    - Implement a full authentication system to allow users to:
       * Create accounts and securely log in
       * Maintain personalized profiles
       * Persist user-specific data across sessions
