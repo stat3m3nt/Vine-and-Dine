@@ -1,10 +1,10 @@
-🍷 Vine & Dine – Interactive Winery Mapping Website
+# 🍷 Vine & Dine – Interactive Winery Mapping Website
 
 An interactive web application that allows users to explore wineries on a dynamic Google Map, filter locations by category, and get directions seamlessly.
 
 Built with the Google Maps JavaScript API, custom markers, filtering logic, and dynamic UI interactions.
 
-📌 Project Overview
+## 📌 Project Overview
 
 Vine & Dine is a winery discovery web app designed to help users:
 
@@ -20,54 +20,36 @@ Experience a clean and responsive UI
 
 This project focuses on practical API integration, DOM manipulation, and front-end problem solving.
 
-🚀 Features
-🗺️ Interactive Google Map
+## 🚀 Features: 
+### 🗺️ Interactive Google Map:
+  - Dynamic map initialization
+  
+  - Custom markers for each winery
+  
+  - Info windows with:
+      * Winery name
+      * Address
+      * Website link
+      * Directions button
 
-Dynamic map initialization
+###🔎 Category Filtering
+  - Filter wineries by type (e.g., Boutique Winery, Estate Winery, etc.)
+  - Active filter styling
+  - Only selected category displays on the map
+  - Clear and re-render markers dynamically
 
-Custom markers for each winery
+###📍 Directions Functionality
+  - Integrated DirectionsService and DirectionsRenderer
+  - Route generation to selected winery
+  - Proper clearing of previous routes
+  - Automatic map re-centering & zoom control
 
-Info windows with:
-
-Winery name
-
-Address
-
-Website link
-
-Directions button
-
-🔎 Category Filtering
-
-Filter wineries by type (e.g., Boutique Winery, Estate Winery, etc.)
-
-Active filter styling
-
-Only selected category displays on the map
-
-Clear and re-render markers dynamically
-
-📍 Directions Functionality
-
-Integrated DirectionsService and DirectionsRenderer
-
-Route generation to selected winery
-
-Proper clearing of previous routes
-
-Automatic map re-centering & zoom control
-
-🎨 UI Enhancements
-
-Sticky footer behavior
-
-Hover states for desktop
-
-Touch-friendly button behavior for mobile
-
-Selected filter button styling (only colored when active)
-
-Scroll effects for better user experience
+###🎨 UI Enhancements
+  - Sticky footer behavior
+  - Hover states for desktop
+  - Touch-friendly button behavior for mobile
+  - Selected filter button styling (only colored when active)
+  - Scroll effects for better user experience
 
 ## 🛠️ Technologies Used
 
@@ -142,7 +124,7 @@ Multiple info windows could remain open.
 Fix:
 Used a currentWindow variable to track and close the previously opened InfoWindow before opening a new one.
 
-📂 Project Structure
+##📂 Project Structure
 vine-and-dine/
 │
 ├── index.html
@@ -166,35 +148,28 @@ vine-and-dine/
 ## Possible Future Improvements:
 
 ### 🔐 User Authentication & Personal Accounts:
-        - Implement a full authentication system to allow users to:
-          * Create accounts and securely log in
-          * Maintain personalized profiles
-          * Persist user-specific data across sessions
-           (This would require integration of a backend service and a database system.)
+   Implement a full authentication system to allow users to:
+    * Create accounts and securely log in
+    * Maintain personalized profiles
+    * Persist user-specific data across sessions
+      (This would require integration of a backend service and a database system.)
 
 ### ⭐ Winery Visit Ratings
-
-      Enhance user experience by allowing users to:
-      
-      * Leave 1–5 star ratings
-      * Add personal notes or reviews
-      * User data would be stored in a database and dynamically rendered upon login.
+   Enhance user experience by allowing users to:
+    * Leave 1–5 star ratings
+    * Add personal notes or reviews
+    * User data would be stored in a database and dynamically rendered upon login.
 
 
-💾 Persistent Data Storage
-
-Currently, all data is stored client-side.
-  Future implementation would include:
-  
+### 💾 Persistent Data Storage
+Currently, all data is stored client-side. Future implementation would include:
   * Backend API routes
   * Secure database storage
   * Protected user sessions
   * Data persistence across devices
 
-🧑‍💻 Full-Stack Architecture Upgrade
-
+### 🧑‍💻 Full-Stack Architecture Upgrade
 Convert the project from a front-end application to a full-stack web application by introducing:
-
   * Authentication middleware
   * RESTful API endpoints
   * Database integration
@@ -203,7 +178,7 @@ Convert the project from a front-end application to a full-stack web application
 
 
 
-👨🏽‍💻 Author
+##👨🏽‍💻 Author
 
-Andrew Evboifo
-Interactive Map Project – 2026
+### Andrew Evboifo
+#### Interactive Map Project – 2026
