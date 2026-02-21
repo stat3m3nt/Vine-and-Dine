@@ -32,19 +32,19 @@ This project focuses on practical API integration, DOM manipulation, and front-e
       * Website link
       * Directions button
 
-###🔎 Category Filtering
+### 🔎 Category Filtering
   - Filter wineries by type (e.g., Boutique Winery, Estate Winery, etc.)
   - Active filter styling
   - Only selected category displays on the map
   - Clear and re-render markers dynamically
 
-###📍 Directions Functionality
+### 📍 Directions Functionality
   - Integrated DirectionsService and DirectionsRenderer
   - Route generation to selected winery
   - Proper clearing of previous routes
   - Automatic map re-centering & zoom control
 
-###🎨 UI Enhancements
+### 🎨 UI Enhancements
   - Sticky footer behavior
   - Hover states for desktop
   - Touch-friendly button behavior for mobile
